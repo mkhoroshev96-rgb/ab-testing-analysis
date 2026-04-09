@@ -1,81 +1,84 @@
 # A/B Testing Analysis (R)
 
-This repository contains several A/B testing cases that simulate real-world analytical workflows.
+This repository contains multiple A/B testing scenarios that simulate real-world analytical workflows.
 
-The focus of these projects is not only on statistical testing, but also on correct experiment setup, validation and business interpretation of results.
-
-## 📊 Overview
-
-The repository includes multiple A/B testing scenarios with different metrics and assumptions.  
-All datasets are simulated, but the analysis follows real-world best practices.
-
-Each case demonstrates a full pipeline:
-
-- data preprocessing
-- randomization (A/B split)
-- validation of experiment setup (SRM, A/A test)
-- statistical testing
-- effect size estimation
-- power analysis (MDE)
-- business interpretation
-- guardrail metrics analysis
-
-## 🧪 Cases included
-
-### Case 1 — Average check analysis
-File: :contentReference[oaicite:0]{index=0}  
-
-- Metric: average check  
-- Includes robustness checks (Mann–Whitney, log-transform)  
-- Demonstrates impact of skewed distributions and outliers  
-- Result: no statistically significant effect, potential positive signal  
+The goal of these projects is to demonstrate not only statistical testing, but also proper experiment design, validation, and business-oriented interpretation of results.
 
 ---
 
-### Case 2 — Unit price analysis
-File: :contentReference[oaicite:1]{index=1}  
+## Overview
 
-- Metric: unit price  
-- Full validation pipeline (SRM, A/A test)  
-- Power analysis shows insufficient sensitivity (MDE > observed effect)  
-- Result: effect exists but cannot be reliably detected  
+The repository includes a set of A/B testing cases with different metrics, assumptions, and experimental setups.
+
+All datasets are simulated, but the analytical approach follows real-world practices used in product and marketing analytics.
+
+Each case represents a full A/B testing pipeline:
+
+- data simulation and preprocessing  
+- user-level randomization (A/B split)  
+- validation of experiment setup (SRM, A/A tests)  
+- statistical testing  
+- confidence interval estimation (including bootstrap)  
+- effect size evaluation  
+- power analysis (MDE)  
+- business interpretation of results  
+- guardrail metrics analysis  
 
 ---
 
-### Case 3 — Freight cost analysis
-File: :contentReference[oaicite:2]{index=2}  
+## What is covered
 
-- Metric: average freight cost  
-- Analysis at order level (correct unit of analysis)  
-- Includes guardrail metric (delivery time)  
-- Result: small uplift (~3%), but statistically insignificant due to low power  
+The cases explore different types of metrics and scenarios, including:
+
+- revenue-based metrics (ARPU, average check, unit price)  
+- behavioral metrics (conversion, quantity, engagement)  
+- cost-related metrics (freight, delivery impact)  
+- guardrail metrics (to validate experiment safety)  
+
+Special attention is given to:
+
+- handling skewed distributions  
+- impact of outliers  
+- experiment sensitivity and statistical power  
+- difference between statistical and practical significance  
 
 ---
 
-## 📈 Key insights
+## Key insights
 
 - Lack of statistical significance does not necessarily mean absence of effect  
-- MDE is critical for interpreting experiment results  
-- Variability of data strongly impacts detectability of effects  
-- Guardrail metrics are essential to validate safety of changes  
+- Power (MDE) plays a critical role in experiment interpretation  
+- Data variability directly impacts detectability of effects  
+- Bootstrap helps better estimate uncertainty in skewed data  
+- Guardrail metrics are essential for safe decision-making  
+
+---
 
 ## 🧠 Methods used
 
 - Welch t-test  
 - Mann–Whitney test  
+- Bootstrap confidence intervals  
 - Log-transformation  
-- Effect size (Cohen’s d)  
+- Effect size estimation (Cohen’s d)  
 - Power analysis (MDE)  
 - SRM check (chi-square test)  
+
+---
 
 ## 🛠 Tools
 
 - R  
 - dplyr  
-- ggplot2  
-- effectsize  
 - pwr  
+- boot  
 
-## 💡 Conclusion
+---
+
+## Conclusion
+
+These projects demonstrate a practical, product-oriented approach to A/B testing, focusing on decision-making and real-world analytical reasoning rather than purely statistical outputs.
+
+## Conclusion
 
 These cases demonstrate a practical approach to A/B testing, focusing on decision-making rather than purely statistical results.
